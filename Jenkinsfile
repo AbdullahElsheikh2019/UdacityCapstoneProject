@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = "https://372839978247.dkr.ecr.eu-west-1.amazonaws.com/udacity"
-        registryCredential = 'ECR'
+        registryCredential = 'JenkinsAWS'
         dockerImage = '372839978247.dkr.ecr.eu-west-1.amazonaws.com/udacity:latest'
   }
      agent any
