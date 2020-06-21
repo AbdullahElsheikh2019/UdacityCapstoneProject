@@ -9,7 +9,7 @@ pipeline {
          stage('Lint HTML')  { 
             steps  {
                sh 'tidy -q -e *.html'
-                  sh 'hadolint Dockerfile'
+                  sh 'hadolint --ignore DL3006 Dockerfile'
             }       
          } 
          stage('Security Scan') {
