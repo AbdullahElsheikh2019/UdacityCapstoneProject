@@ -38,7 +38,7 @@ pipeline {
             }
          stage('set kubectl context') {
             steps{
-               withAWS(region:'eu-west-1',credentials:'ECR') {
+               withAWS(region:'eu-west-1',credentials:'JenkinsAWS') {
                   sh "aws eks --region eu-west-1 update-kubeconfig --name udacity"
                       sh "kubectl config use-context arn:aws:eks:eu-west-1:372839978247:cluster/udacity"
 
@@ -47,7 +47,7 @@ pipeline {
             }
          stage('Deploy') {
             steps{
-               withAWS(region:'eu-west-1',credentials:'ECR') {
+               withAWS(region:'eu-west-1',credentials:'JenkinsAWS') {
                   sh 'kubectl apply -f ./controller.yaml'
                    }
                 }
