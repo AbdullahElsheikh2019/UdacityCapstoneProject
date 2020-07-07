@@ -5,7 +5,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: app
+    matchLabels:
+        app: app
   template:
     metadata:
       name: udacity
