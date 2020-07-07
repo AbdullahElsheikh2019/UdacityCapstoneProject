@@ -48,7 +48,7 @@ pipeline {
          stage('Deploy') {
             steps{
                withAWS(region:'eu-west-1',credentials:'JenkinsAWS') {
-                  sh 'kubectl apply -f K8Controller.yaml'
+                  sh 'kubectl apply -f ./K8Controller.yaml'
                    }
                 }
             }                             
